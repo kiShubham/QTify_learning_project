@@ -1,0 +1,31 @@
+/* this is reset css : we dont want browser to decide the style and make it by your own ,
+this template is same in every company .
+these variables are accessible from every where inside the application;
+we can also use variable for break points ;eg .720px
+*/
+
+:root {
+  --color-primary: #34c94b;
+  --color-black: #121212;
+  --color-white: #fff;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-black);
+  font-family: "Poppins", sans-serif;
+  color: var(--color-white);
+  overflow-x: hidden;
+}
