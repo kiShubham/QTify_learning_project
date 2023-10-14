@@ -3,7 +3,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import { fetchTopAlbums } from "./api/api";
-import Card from "./components/Card/Card";
+import Section from "./components/Section/Section";
 
 function App() {
   const [topAlbumsData, setTopAlbumsData] = useState([]);
@@ -21,9 +21,9 @@ function App() {
     <div>
       <Navbar />
       <Hero />
-      {topAlbumsData.map((item) => {
-        return <Card data={item} type="albums" />;
-      })}
+      <div>
+        <Section title="Top Albums" data={topAlbumsData} type="albums" />
+      </div>
     </div>
   );
 }
