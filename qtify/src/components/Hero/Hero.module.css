@@ -5,4 +5,5 @@
   height: 270px;
   background-color: var(--color-black);
   gap: 30px;
+  text-align: center;
 }
