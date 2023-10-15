@@ -11,6 +11,8 @@
   margin-top: 18px;
 }
 .wrapper {
+  margin-left: 20px;
+  /* *margin given as grid will synchronize its looks similar to swiper slide , slide has 20px padding-left*/
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
