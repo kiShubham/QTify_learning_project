@@ -4,7 +4,7 @@ import { CircularProgress } from "@mui/material";
 import Card from "../Card/Card";
 import Carousel from "../Carousel/Carousel";
 
-const Section = ({ title, data, type }) => {
+const Section = ({ title = "", data, type, showTime = true }) => {
   const [carouselToggle, setCarouselToggle] = useState(true);
 
   const handleToggle = () => {
@@ -15,9 +15,15 @@ const Section = ({ title, data, type }) => {
     <div>
       <div className={styles.header}>
         <h3>{title}</h3>
-        <h4 className={styles.toggleText} onClick={handleToggle}>
-          {!carouselToggle ? "Collapse All" : "Show All"}
-        </h4>
+        {showTime ? (
+          <>
+            <h4 className={styles.toggleText} onClick={handleToggle}>
+              {!carouselToggle ? "Collapse All" : "Show All"}
+            </h4>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
       {!data.length ? (
         <CircularProgress />
@@ -25,8 +31,8 @@ const Section = ({ title, data, type }) => {
         <div className={styles.cardsWrapper}>
           {!carouselToggle ? (
             <div className={styles.wrapper}>
-              {data.map((item) => (
-                <Card data={item} type={type} />
+              {data.map((item, idx) => (
+                <Card data={item} type={type} key={idx} />
               ))}
             </div>
           ) : (
