@@ -6,7 +6,7 @@ const SongBtn = ({ title, data, setSongs }) => {
     return setSongs(data);
   };
   return (
-    <div className={styles.btnWrap} onMouseOver={handleSelect}>
+    <div className={styles.btnWrap} onClick={handleSelect}>
       <div className={styles.title}>{title}</div>
       <div className={styles.pad}></div>
     </div>

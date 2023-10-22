@@ -6,7 +6,6 @@ import Carousel from "../Carousel/Carousel";
 
 const Section = ({ title = "", data, type, showTime = true }) => {
   const [carouselToggle, setCarouselToggle] = useState(true);
-  const [keyN, setKeyN] = useState(0);
 
   const handleToggle = () => {
     setCarouselToggle(!carouselToggle);
@@ -32,8 +31,8 @@ const Section = ({ title = "", data, type, showTime = true }) => {
         <div className={styles.cardsWrapper}>
           {!carouselToggle ? (
             <div className={styles.wrapper}>
-              {data.map((item) => (
-                <Card data={item} type={type} />
+              {data.map((item, idx) => (
+                <Card data={item} type={type} key={idx} />
               ))}
             </div>
           ) : (

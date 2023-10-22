@@ -63,6 +63,8 @@
 
 // export default SongWrapper;
 
+//optimised :-
+
 import React, { useState, useEffect } from "react";
 import { fetchAllSongs, fetchGenres } from "../../api/api";
 import Section from "../Section/Section";
@@ -94,16 +96,16 @@ const SongWrapper = ({ sendDataToHome }) => {
     };
 
     fetchData();
-
+    // }, [sendDataToHome]); // this is giving hectic error , carosel is not moving ;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sendDataToHome]);
+  }, []);
 
   const handleSelectSong = (selectedGenre) => {
     setData({ ...data, selectedGenre });
   };
 
   const renderGenreButtons = () => {
-    return data.genres.map((genre, idx) => (
+    return data.genres.map((genre) => (
       <SongBtn
         key={genre.key}
         title={genre.label}
