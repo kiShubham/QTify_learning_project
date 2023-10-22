@@ -1,0 +1,31 @@
+.btnWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  /* justify-content: center; */
+  width: 68px;
+  cursor: pointer;
+  /* border: 1px solid var(--color-white); */
+}
+.title {
+  height: 24px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.pad {
+  /* background-color: var(--color-white); */
+  border-radius: 10px;
+  height: 4px;
+  width: 100%;
+}
+.btnWrap:hover {
+  .pad {
+    background-color: var(--color-primary);
+  }
+}
+
+/* nth child select kar */
